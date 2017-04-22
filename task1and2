@@ -1,0 +1,10 @@
+create database tabledata;
+show databases;
+use tabledata;
+create TABLE tabledata (name VARCHAR(20), day REAL, temp REAL);
+desc tabledata;
+LOAD DATA LOCAL INFILE '/Users/gracechao/Desktop/tabledata.csv' INTO TABLE tabledata fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 lines (name, day, temp);
+select * from tabledata;
+
+
+select AVG(temp) as tempAVG from tabledata; 
